@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Absence Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Smart Absence Tracker Logo" class="logo">
+            <h1>Smart Absence Tracker</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#logout" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h2>Login</h2>
+        <div class="login-box">
+            <h3>Student Login</h3>
+            <input type="text" placeholder="Student ID" required>
+            <input type="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+    
+    <div class="dashboard hidden" id="dashboard">
+        <h2>Welcome, Student</h2>
+        <p>Your Attendance Overview:</p>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>March 4, 2025</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>March 3, 2025</td>
+                <td>Absent</td>
+            </tr>
+        </table>
+        <button onclick="logout()">Logout</button>
+    </div>
+    
+    <script>
+        function login() {
+            document.querySelector('.container').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        }
+        function logout() {
+            document.querySelector('.container').classList.remove('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
+/* CSS (styles.css) */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: midnightblue;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input, button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+}
+.hidden { display: none; }
+.dashboard {
+    width: 60%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

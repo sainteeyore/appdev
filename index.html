@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Absence Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.gif" alt="Smart Absence Tracker Logo" class="logo">
+            <h1>Smart Absence Tracker</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#logout" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="login-box">
+            <h3>Student Login</h3>
+            <input type="text" placeholder="Student ID" required>
+            <input type="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+    
+    <div class="dashboard hidden" id="dashboard">
+        <h2>Welcome, Student</h2>
+        <p>Your Attendance Overview:</p>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>March 4, 2025</td>
+                <td>Present</td>
+            </tr>
+            <tr>
+                <td>March 3, 2025</td>
+                <td>Absent</td>
+            </tr>
+        </table>
+        <button onclick="logout()">Logout</button>
+    </div>
+    
+    <script>
+        function login() {
+            document.querySelector('.container').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('hidden');
+        }
+        function logout() {
+            document.querySelector('.container').classList.remove('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
